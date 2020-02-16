@@ -1,7 +1,7 @@
 node {
  stage('Git-Checkout') {
   
-   git 'https://github.com/Laharivegiraju22/account-info.git'
+   git 'https://github.com/Laharivegiraju22/customer-info.git'
   }
     
  def project_path="01-Jenkins/Code/petclinic"
@@ -48,7 +48,7 @@ stage('Jfrog Artifacory Upload') {
 	def server= Artifactory.server 'Artifactory'
 	def uploadSpec= """{
 	"files": [{
-	"pattern": "/root/.jenkins/workspace/account-info/01-Jenkins/Code/petclinic/target/*.war",
+	"pattern": "/root/.jenkins/workspace/customer-info/01-Jenkins/Code/petclinic/target/*.war",
 		"target": "petclinic-accountinfo"}]x
 	}"""
 server.upload(uploadSpec)
