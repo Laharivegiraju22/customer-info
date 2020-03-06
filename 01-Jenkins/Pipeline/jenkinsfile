@@ -34,7 +34,7 @@ node {
 
 stage('Pushing DockerImage to DockerHub') {
 docker.withRegistry('', 'docker-hyndu' ) {
-sh label: '', script: 'docker push hyndavi123/petclinic:$BUILD_NUMBER'
+sh label: '', script: 'docker push hyndavi123/petclinic'
 }
 }
 }
